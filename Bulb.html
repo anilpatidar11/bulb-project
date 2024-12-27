@@ -1,0 +1,82 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bulb Switcher</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        background-color: #f8f9fa;
+      }
+      .bulb-container {
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+  <body>
+
+    <div class="bulb-container">
+      <img
+        src="onbulb.jpg"
+        alt="Bulb On"
+        class="img-fluid"
+        width="200px"
+        id="on"
+      />
+    </div>
+    <div class="button-container">
+      <button class="btn btn-primary m-2" onclick="ON()">Turn On</button>
+      <button class="btn btn-info m-2" onclick="OFF()">Turn Off</button>
+    </div>
+
+    <div class="bulb-container">
+      <img
+        src="offbulb.jpg"
+        alt="Bulb Off"
+        class="img-fluid"
+        width="200px"
+        id="onn"
+      />
+    </div>
+    <div class="button-container">
+      <p style="color: rgb(215, 162, 93);">Double click on Switch button</p>
+      <button class="btn btn-success m-2" onclick="Switch()">Switch</button>
+    </div>
+
+    <script>
+      function ON() {
+        document.getElementById("on").src = "onbulb.jpg";
+      }
+
+      function OFF() {
+        document.getElementById("on").src = "offbulb.jpg";
+      }
+
+      let Bulbs = false;
+
+      function Switch() {
+        if (Bulbs == false) {
+          document.getElementById("onn").src = "onbulb.jpg";
+          Bulbs = true;
+        } else {
+          document.getElementById("onn").src = "offbulb.jpg";
+          Bulbs = false;
+        }
+      }
+    </script>
+   
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
